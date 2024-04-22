@@ -13,7 +13,7 @@ void clear(){
 }
 
 int main(){
-  int caso, i;
+  int caso, produtos=0;
   int stay = 1;
   int codProd[MAXPROD];
   float precoProd[MAXPROD];
@@ -32,12 +32,23 @@ int main(){
       break;
       case 1:
         printf("Codigo do produto: ");
-        scanf("%d", &codProd[i]);
+        scanf("%d", &codProd[produtos]);
         printf("Preco do produto: ");
-        scanf("%f", &precoProd[i]);
+        scanf("%f", &precoProd[produtos]);
         printf("Descricao do produto: ");
-        scanf("%c", &descProd[i]);
-        i++;
+        fflush(stdin);
+        fgets(descProd[produtos],50, stdin);
+        produtos++;
+        clear();
+      break;
+      case 2:
+        printf("Lista de estoque, alooooo\n");
+        for (int i = 0; i < produtos; i++)
+        {
+          printf("Codigo de produto: %d\n", codProd[i]);
+          printf("Preco de produto: %.2f\n", precoProd[i]);
+          printf("Descricao de produto: %s\n", descProd[i]);
+        }
       break;
     }
   } while(stay != 0);
