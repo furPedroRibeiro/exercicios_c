@@ -12,5 +12,5 @@ int main(){
       numAtual = soma;
     }
   }
-  printf("%i\n", numAtual);
+  printf("%i\n", soma);
 }
